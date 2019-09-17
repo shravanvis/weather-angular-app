@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngpractise';
+  ComponentName = "Data Binding Component";
+
+  linkUrl = "https://www.google.com";
+
+  isTrue = false;
+
+  returnName(){
+    return this.ComponentName;
+  }
+
+  print(e){
+    console.log(e,'ComponentName');
+  }
 }

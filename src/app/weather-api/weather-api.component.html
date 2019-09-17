@@ -1,0 +1,68 @@
+<div class="container">
+    <p style="font-size: 40px; background-color: linen"><strong>Weather Forecast</strong></p>
+</div>
+
+
+
+<div class="container" style="background-color: mediumturquoise">
+    <div class="row">
+      <div class="col-md-6"><h3 class="text-center">Search for Weather:</h3>
+      <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+          <div class="form-group">
+              <input type="text" class="form-control" id="weatherLocation" aria-describedby="weatherLocation"
+              placeholder="Please input a Location" formControlName="location">
+          </div>
+      
+      <div class="text-center">
+        <button type="submit" class="btn btn-success btn-md">
+          Search for the weather
+        </button>
+      </div>
+    </form>
+    </div>
+    <div class="col-md-6" style="background-color: lime">
+            <h3 class="text-center my-4">Weather Details:</h3>
+            <p class="text-center" style="background-color: lime">
+              Current weather conditions: {{ this.weatherData?.current.weather_descriptions
+              }}.
+            </p>
+            <p class="text-center">
+              Temperature in Degrees Celsius: {{ this.weatherData?.current.temperature }}
+            </p>
+            <p class="text-center">
+                    Feels like Temperature: {{ this.weatherData?.current.feelslike
+                    }}
+                  </p>
+                  <p class="text-center">
+                        Location Searched: {{ this.weatherData?.location.name }}, {{
+                        this.weatherData?.location.country }}.
+                      </p>
+            <p class="text-center">
+              Humidity in %: {{ this.weatherData?.current.humidity }}
+            </p>
+            
+            <p class="text-center">
+              Visibility: {{ this.weatherData?.current.visibility
+              }}
+            </p>
+            <p class="text-center">
+              Pressure: {{ this.weatherData?.current.pressure
+              }}
+            </p>
+            <p class="text-center">
+              wind speed in km/hr: {{ this.weatherData?.current.wind_speed
+              }}
+            </p>
+            <p class="text-center">
+                    wind direction: {{ this.weatherData?.current.wind_dir
+                    }}
+                  </p>
+            <!-- <p class="text-center">
+              Feels like in Degrees Farenheit: {{
+              this.weatherData?.current.feelslike_f }}
+            </p> -->
+            
+          </div>
+    </div>
+    
+  </div>
