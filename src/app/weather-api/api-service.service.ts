@@ -13,6 +13,12 @@ export class APIServiceService {
     return this.http.get(
       'http://api.weatherstack.com/current?access_key=96e843a130dd76c5596c7e65e98f37d8&query=' + location
     );
+    
+   getTime(){
+    return this.http.get(
+      'http://worldtimeapi.org/api/timezone/Asia/Kolkata'
+    );
+   }
 }
 
 }
